@@ -1,2 +1,19 @@
 # Sorting Algorithm Visualizer
- This porjects helps us see in action how sorting algorithms such as merge sort would sort a bargraph of random data
+
+### Project Duraiton: October 30, 2020 - November 7, 2020
+
+### Project Task
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The aim of this project is to 
+
+### Background
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In preparation for my techincal interviews when applying for jobs, I decided to
+
+### Algorithm & Implementation
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The 
+
+### Results
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In 
+
+
+### What Could be Improved?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I 
