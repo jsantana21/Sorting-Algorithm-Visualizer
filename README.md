@@ -1,6 +1,6 @@
 # Sorting Algorithm Visualizer
 
-### Project Duraiton: October 30, 2020 - November 7, 2020
+### Project Duraiton: September 30, 2020 - November 7, 2020
 
 ### Project Task
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The aim of this project is to 
