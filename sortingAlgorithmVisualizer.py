@@ -86,7 +86,7 @@ algorithmList.grid(row=0, column=1, padx=5, pady=5)
 algorithmList.current(0) #chooses Bubble Sort by default since it is in index 0
 
 # Button to Generate New Random Array
-Button(UserInterfaceFrame, text="Generate New Array", command=GenerateNewArray, bg='white').grid(row=0, column=2, padx=5, pady=5)
+Button(UserInterfaceFrame, text="Generate New Random Array", command=GenerateNewArray, bg='white').grid(row=0, column=2, padx=5, pady=5)
 
 # SECOND ROW
 # 'Array Size' Label where you can decide how many elements you want to have the array
