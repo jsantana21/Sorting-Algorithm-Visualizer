@@ -83,7 +83,7 @@ algorithmList.grid(row=0, column=1, padx=5, pady=5)
 algorithmList.current(0) #chooses Bubble Sort by default since it is in index 0
 
 # Sliding Scale button so the user can adjust how fast or slow the sorting speed of the algorithm is
-# The smaller the sorting speed, the faster the sorting will be;
+# The smaller the sorting speed, the faster the sorting will be; The larger the sorting speed, the slower the sorting will be
 sortingSpeedScale = Scale(UserInterfaceFrame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL, label="Sorting Speed [sec]")
 sortingSpeedScale.grid(row=0, column=2, padx=5, pady=5)
 
