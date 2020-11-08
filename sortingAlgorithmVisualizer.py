@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 import random # To generate random data values
 from BubbleSort import BubbleSort
+from QuickSort import QuickSort
 
 
 # Generates a black window; Background for GUI 
@@ -63,7 +64,17 @@ def GenerateNewArray():
 def StartSortingAlgorithm():
     global data
 
-    BubbleSort(data, drawDataArray, sortingSpeedScale.get())
+    # If data is empty then return out of it
+    if not data:
+        return
+
+    if (algorithmList.get() == 'Quick Sort'):
+        QuickSort(data, 0, len(data)-1, drawDataArray, sortingSpeedScale.get())
+        # After going through the double for loop, the array should be sorted therefore all bars should be blue
+        drawDataArray(data, ['blue' for x in range(len(data))])
+
+    elif algorithmList.get() == 'Bubble Sort':
+        BubbleSort(data, drawDataArray, sortingSpeedScale.get())
 
 # Generates the background User Interface area of the GUI
 UserInterfaceFrame = Frame(root, width = 1400, height = 200, bg='snow4')
@@ -84,7 +95,7 @@ algorithmList.current(0) #chooses Bubble Sort by default since it is in index 0
 
 # Sliding Scale button so the user can adjust how fast or slow the sorting speed of the algorithm is
 # The smaller the sorting speed, the faster the sorting will be; The larger the sorting speed, the slower the sorting will be
-sortingSpeedScale = Scale(UserInterfaceFrame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL, label="Sorting Speed [sec]")
+sortingSpeedScale = Scale(UserInterfaceFrame, from_=0.1, to=5.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL, label="Sorting Speed [sec]")
 sortingSpeedScale.grid(row=0, column=2, padx=5, pady=5)
 
 # Button to Start Sorting Algorithm
