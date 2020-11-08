@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 import random # To generate random data values
+from BubbleSort import BubbleSort
 
 
 # Generates a black window; Background for GUI 
@@ -11,8 +12,10 @@ root.config(bg='black')
 
 #variables & functions
 selectedAlgorithm = StringVar()
+data = [] # where we'll put in the data values; data is used drawDataArray, GenerateNewArray, & StartSortingAlgorithm 
 
-def drawDataArray(data):
+# Draws the rectangle that represent the data value onto the canvas
+def drawDataArray(data, colorArray):
     canvas.delete("all") # Delete data values from canvas from previous use of drawDataArray
     canvas_height = 380
     canvas_width = 1400
@@ -30,43 +33,33 @@ def drawDataArray(data):
         x2 = (i + 1) * bargraph_width + offset
         y2 = canvas_height
 
-        canvas.create_rectangle(x1, y1, x2, y2, fill="red") #Creates the bar for each data value using the x1,y1 and x2,y2 coordinates
+        canvas.create_rectangle(x1, y1, x2, y2, fill=colorArray[i]) #Creates the bar for each data value using the x1,y1 and x2,y2 coordinates
         canvas.create_text(x1, y1, anchor=SW, text=str(data[i])) # Writes the numbers over the bar representing the data
 
+    # Shows how the data array changes step by step once an algorith has started
+    root.update()
 
+# Generates a new random array of data values using the constraints of minValue, maxValue, and arraySize
 def GenerateNewArray():
-    print('Sorting Algorithm Selected: ' + selectedAlgorithm.get())
 
-    try:
-        minValue = int(minValueEntry.get()) # Recieves the string that the user typed in the Min Value box and converts it to an int
-    except:
-        minValue = 1 # If no input is given, then minValue is 1 by default
-    try:
-        maxValue = int(maxValueEntry.get()) # Recieves the string that the user typed in the Max Value box and converts it to an int
-    except:
-        maxValue = 30 # If no input is given, then maxValue is 10 by default
-    try:
-        arraySize = int(arraySizeEntry.get()) # Recieves the string that the user typed in the Array Size box and converts it to an int
-    except:
-        arraySize = 25 # If no input is given, then arraySize is 10 by default
+    global data
 
-    # Conditional Statments to avoid any bugs
-    if minValue < 0 : # To avoid negative value data values
-        minValue = 0
-    if maxValue > 100: # To avoid the bars going past the canvas and keep format clean as possible
-        maxValue = 100
-    if arraySize > 100 or arraySize < 3:# To avoid the array of bars being cut by the canvas 
-        arraySize = 100
-    if minValue > maxValue: # To avoid any bugs in generating the data values
-        minValue, maxValue = maxValue, minValue # swap the values
+    minValue = int(minValueScale.get()) # Recieves the string that the user typed in the Min Value box and converts it to an int
+    maxValue = int(maxValueScale.get()) # Recieves the string that the user typed in the Max Value box and converts it to an int
+    arraySize = int(arraySizeScale.get()) # Recieves the string that the user typed in the Array Size box and converts it to an int
 
-    data = []
     # Fills in the data array with random values with the range of the minValue and maxValue
     for _ in range(arraySize):
         data.append(random.randrange(minValue, maxValue+1))
 
     
-    drawDataArray(data)
+    drawDataArray(data, ['red' for x in range(len(data))])
+
+# Calls upon the sorting algorithm the user has chosen to use
+def StartSortingAlgorithm():
+    global data
+
+    BubbleSort(data, drawDataArray, sortingSpeedScale.get())
 
 # Generates the background User Interface area of the GUI
 UserInterfaceFrame = Frame(root, width = 1400, height = 200, bg='snow4')
@@ -85,23 +78,41 @@ algorithmList = ttk.Combobox(UserInterfaceFrame, textvariable = selectedAlgorith
 algorithmList.grid(row=0, column=1, padx=5, pady=5)
 algorithmList.current(0) #chooses Bubble Sort by default since it is in index 0
 
-# Button to Generate New Random Array
-Button(UserInterfaceFrame, text="Generate New Random Array", command=GenerateNewArray, bg='white').grid(row=0, column=2, padx=5, pady=5)
+# Sliding Scale button so the user can adjust how fast or slow the sorting speed of the algorithm is
+sortingSpeedScale = Scale(UserInterfaceFrame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.2, orient=HORIZONTAL, label="Sorting Speed [sec]")
+sortingSpeedScale.grid(row=0, column=2, padx=5, pady=5)
+
+# Button to Start Sorting Algorithm
+Button(UserInterfaceFrame, text="Start Sorting Algorithm", command=StartSortingAlgorithm, bg='white').grid(row=0, column=3, padx=5, pady=5)
+
 
 # SECOND ROW
-# 'Array Size' Label where you can decide how many elements you want to have the array
-Label(UserInterfaceFrame, text="Array Size ", bg='snow4').grid(row=1, column=0, padx=5, pady=5, sticky=W)
-arraySizeEntry = Entry(UserInterfaceFrame)
-arraySizeEntry.grid(row=1, column=1, padx=5, pady=5, sticky=W)
+# 'Array Size' Label where you can decide how many elements you want to have the array; 
+# Label(UserInterfaceFrame, text="Array Size ", bg='snow4').grid(row=1, column=0, padx=5, pady=5, sticky=W)
+# arraySizeEntry = Entry(UserInterfaceFrame)
+# REPLACED LABEL WITH SLIDING SCALE
+
+arraySizeScale = Scale(UserInterfaceFrame, from_=3, to=100, resolution=1, orient=HORIZONTAL, label="Array Size")
+arraySizeScale.grid(row=1, column=0, padx=5, pady=5)
 
 # 'Min Value' Label where you can decide what the smallest element in the array is 
-Label(UserInterfaceFrame, text="Min Value ", bg='snow4').grid(row=1, column=2, padx=5, pady=5, sticky=W)
-minValueEntry = Entry(UserInterfaceFrame)
-minValueEntry.grid(row=1, column=3, padx=5, pady=5, sticky=W)
+# Label(UserInterfaceFrame, text="Min Value ", bg='snow4').grid(row=1, column=2, padx=5, pady=5, sticky=W)
+# minValueEntry = Entry(UserInterfaceFrame)
+# REPLACED LABEL WITH SLIDING SCALE
+
+minValueScale = Scale(UserInterfaceFrame, from_=0, to=10, resolution=1, orient=HORIZONTAL, label="Min Value")
+minValueScale.grid(row=1, column=1, padx=5, pady=5)
 
 # 'Max Value' Label where you can decide what the biggest element in the array is 
-Label(UserInterfaceFrame, text="Max Value ", bg='snow4').grid(row=1, column=4, padx=5, pady=5, sticky=W)
-maxValueEntry = Entry(UserInterfaceFrame)
-maxValueEntry.grid(row=1, column=5, padx=5, pady=5, sticky=W)
+# Label(UserInterfaceFrame, text="Max Value ", bg='snow4').grid(row=1, column=4, padx=5, pady=5, sticky=W)
+# maxValueEntry = Entry(UserInterfaceFrame)
+# REPLACED LABEL WITH SLIDING SCALE
+
+maxValueScale = Scale(UserInterfaceFrame, from_=10, to=100, resolution=1, orient=HORIZONTAL, label="Max Value")
+maxValueScale.grid(row=1, column=2, padx=5, pady=5)
+
+# Button to Generate New Random Array of Data Values
+Button(UserInterfaceFrame, text="Generate New Random Array", command=GenerateNewArray, bg='white').grid(row=1, column=3, padx=5, pady=5)
+
 
 root.mainloop() # tkinter's equivalent of main()
