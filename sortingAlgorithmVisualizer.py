@@ -44,9 +44,9 @@ def GenerateNewArray():
 
     global data
 
-    minValue = int(minValueScale.get()) # Recieves the string that the user typed in the Min Value box and converts it to an int
-    maxValue = int(maxValueScale.get()) # Recieves the string that the user typed in the Max Value box and converts it to an int
-    arraySize = int(arraySizeScale.get()) # Recieves the string that the user typed in the Array Size box and converts it to an int
+    minValue = int(minValueScale.get()) # Recieves the string that the user put in the Min Value box and converts it to an int
+    maxValue = int(maxValueScale.get()) # Recieves the string that the user put in the Max Value box and converts it to an int
+    arraySize = int(arraySizeScale.get()) # Recieves the string that the user put in the Array Size box and converts it to an int
 
     # Fills in the data array with random values with the range of the minValue and maxValue
     for _ in range(arraySize):
