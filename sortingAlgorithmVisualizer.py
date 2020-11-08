@@ -42,11 +42,15 @@ def drawDataArray(data, colorArray):
 # Generates a new random array of data values using the constraints of minValue, maxValue, and arraySize
 def GenerateNewArray():
 
+    canvas.delete("all") # Delete data values from canvas from previous use of drawDataArray
+
     global data
 
     minValue = int(minValueScale.get()) # Recieves the string that the user put in the Min Value box and converts it to an int
     maxValue = int(maxValueScale.get()) # Recieves the string that the user put in the Max Value box and converts it to an int
     arraySize = int(arraySizeScale.get()) # Recieves the string that the user put in the Array Size box and converts it to an int
+
+    data = [] # Empty out data array to get rid of values from previous use of GenerateNewArray
 
     # Fills in the data array with random values with the range of the minValue and maxValue
     for _ in range(arraySize):
@@ -79,7 +83,8 @@ algorithmList.grid(row=0, column=1, padx=5, pady=5)
 algorithmList.current(0) #chooses Bubble Sort by default since it is in index 0
 
 # Sliding Scale button so the user can adjust how fast or slow the sorting speed of the algorithm is
-sortingSpeedScale = Scale(UserInterfaceFrame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.2, orient=HORIZONTAL, label="Sorting Speed [sec]")
+# The smaller the sorting speed, the faster the sorting will be;
+sortingSpeedScale = Scale(UserInterfaceFrame, from_=0.1, to=2.0, length=200, digits=2, resolution=0.1, orient=HORIZONTAL, label="Sorting Speed [sec]")
 sortingSpeedScale.grid(row=0, column=2, padx=5, pady=5)
 
 # Button to Start Sorting Algorithm
@@ -92,7 +97,7 @@ Button(UserInterfaceFrame, text="Start Sorting Algorithm", command=StartSortingA
 # arraySizeEntry = Entry(UserInterfaceFrame)
 # REPLACED LABEL WITH SLIDING SCALE
 
-arraySizeScale = Scale(UserInterfaceFrame, from_=3, to=100, resolution=1, orient=HORIZONTAL, label="Array Size")
+arraySizeScale = Scale(UserInterfaceFrame, from_ = 3, to=100, resolution=1, orient=HORIZONTAL, label="Array Size")
 arraySizeScale.grid(row=1, column=0, padx=5, pady=5)
 
 # 'Min Value' Label where you can decide what the smallest element in the array is 
