@@ -26,7 +26,7 @@ In my animation, the color **orange** is used denoted the **pivot** while the co
 <img src="https://codepumpkin.com/wp-content/uploads/2017/10/MergeSort_worst_case.gif"  />  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" />  \
 In my version of the Merge Sort animation, **orange** represents the **left half of the array** while **green** represents the **right half of the array**. The remaining colors have the same meaning as prevoiusly mentioned above. \
 <img src="https://github.com/jsantana21/Sorting-Algorithm-Visualizer/blob/main/sort%20animation%20gifs/Merge%20Sort.gif"  />   \
-Lastly the Insertion sort algorithm operates on the array doing the following steps:
+Lastly the Insertion sort algorithm operates on the array doing the following steps: \
 <img src="https://tutorialsbookmarks.com/wp-content/uploads/2019/08/Insertion-sort.gif" width="400" height="400" />  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif" />  \
 The color representation in my Insertion Sort animation is exactly the same as the Bubble Sort.
 <img src="https://github.com/jsantana21/Sorting-Algorithm-Visualizer/blob/main/sort%20animation%20gifs/Insertion%20Sort.gif"  />  
