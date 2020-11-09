@@ -7,7 +7,7 @@ Best Case Time Complexity [Big-omega]: O(n)
 
 Average Time Complexity [Big-theta]: O(n^2)
 
-Space Complexity: O(1)
+Space Complexity: O(1) 
 '''
 
 # Based off of Geeks for Geeks Insertion sort example: https://www.geeksforgeeks.org/insertion-sort/

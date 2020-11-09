@@ -66,7 +66,7 @@ def GenerateNewArray():
 def StartSortingAlgorithm():
     global data
 
-    # If data is empty then return out of it
+    # If data is empty then return out of it 
     if not data:
         return
 
