@@ -16,7 +16,7 @@
 ### Results
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; So for the Bubble Sort algorithm, this is how the algorithm is expected to go about sorting an array: 
  <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Sorting_bubblesort_anim.gif"  />  <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Bubble-sort.gif" />  \
-In my animation, once a random array of data values is generated it is always denoted as **red** meaning the data values are **unsorted**. When two arrays are highlighted in **purple** that meant to denote that the values are about to be **swapped** and once the **sorting is comeplete** all the bars in the graph are colored in **blue**. 
+In my animation, once a random array of data values is generated it is always denoted as **red** meaning the data values are **unsorted**. When two arrays are highlighted in **purple** that meant to denote that the values are about to be **swapped** and once the **sorting is comeplete** all the bars in the graph are colored in **blue**. \
 <img src="https://github.com/jsantana21/Sorting-Algorithm-Visualizer/blob/main/sort%20animation%20gifs/Bubble%20Sort%20.gif"  />   \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Next is the Quick Sort which is expected to sort an array as the following: \
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif"  />  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif" />  \
@@ -24,7 +24,7 @@ In my animation, the color **orange** is used denoted the **pivot** while the co
 <img src="https://github.com/jsantana21/Sorting-Algorithm-Visualizer/blob/main/sort%20animation%20gifs/Quick%20Sort.gif"  />   \
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Merge Sort sorts the array as the following way: \
 <img src="https://codepumpkin.com/wp-content/uploads/2017/10/MergeSort_worst_case.gif"  />  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" />  \
-In my version of the Merge Sort animation, **orange** represents the **left half of the array** while **green** represents the **right half of the array**. The remaining colors have the same meaning as prevoiusly mentioned above. 
+In my version of the Merge Sort animation, **orange** represents the **left half of the array** while **green** represents the **right half of the array**. The remaining colors have the same meaning as prevoiusly mentioned above. \
 <img src="https://github.com/jsantana21/Sorting-Algorithm-Visualizer/blob/main/sort%20animation%20gifs/Merge%20Sort.gif"  />   \
 Lastly the Insertion sort algorithm operates on the array doing the following steps:
 <img src="https://tutorialsbookmarks.com/wp-content/uploads/2019/08/Insertion-sort.gif" width="400" height="400" />  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif" />  \
