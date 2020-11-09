@@ -1,6 +1,17 @@
 import time # To help us visualize this algorithm step by step
 
+'''
+Worst Case Time Complexity [ Big-O ]: O(n^2)
+
+Best Case Time Complexity [Big-omega]: O(n)
+
+Average Time Complexity [Big-theta]: O(n^2)
+
+Space Complexity: O(1)
+'''
+
 # Based off of Geeks for Geeks Bubble sort example
+# Another source: https://www.studytonight.com/data-structures/bubble-sort
 def BubbleSort(data, drawDataArray, sortSpeedTime):
     # Traverse through all array elements
     for _ in range(len(data)-1):

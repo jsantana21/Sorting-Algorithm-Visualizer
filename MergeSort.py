@@ -1,5 +1,16 @@
 import time # To help us visualize this algorithm step by step
 
+'''
+Worst Case Time Complexity [ Big-O ]: O(n*log n)
+
+Best Case Time Complexity [Big-omega]: O(n*log n)
+
+Average Time Complexity [Big-theta]: O(n*log n)
+
+Space Complexity: O(n)
+'''
+# Based off of Geeks for Geeks Bubble sort example
+# Another source: https://www.studytonight.com/data-structures/merge-sort#
 def MergeSort(data, drawDataArray, sortSpeedTime):
     MergeSort2(data,0, len(data)-1, drawDataArray, sortSpeedTime)
 
