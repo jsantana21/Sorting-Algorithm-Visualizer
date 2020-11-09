@@ -4,6 +4,7 @@ import random # To generate random data values
 from BubbleSort import BubbleSort
 from QuickSort import QuickSort
 from MergeSort import MergeSort
+from InsertionSort import InsertionSort
 
 
 # Generates a black window; Background for GUI 
@@ -78,6 +79,9 @@ def StartSortingAlgorithm():
     elif algorithmList.get() == 'Merge Sort':
         MergeSort(data, drawDataArray, sortingSpeedScale.get())
 
+    elif algorithmList.get() == 'Insertion Sort':
+        InsertionSort(data, drawDataArray, sortingSpeedScale.get())
+
     # After going through the double for loop, the array should be sorted therefore all bars should be blue
     drawDataArray(data, ['blue' for x in range(len(data))])
     
@@ -95,7 +99,7 @@ canvas.grid(row=1, column=0, padx=10, pady=5)
 # FIRST ROW
 # (Top Left Corner); Algorithm Label (where you can choose which sorting algorithm you want to use)
 Label(UserInterfaceFrame, text="Sorting Algorithm: ", bg='snow4').grid(row=0, column=0, padx=5, pady=5, sticky=W) # W for west aka left
-algorithmList = ttk.Combobox(UserInterfaceFrame, textvariable = selectedAlgorithm, values=['Bubble Sort', 'Quick Sort','Merge Sort'])
+algorithmList = ttk.Combobox(UserInterfaceFrame, textvariable = selectedAlgorithm, values=['Bubble Sort', 'Quick Sort','Merge Sort', 'Insertion Sort'])
 algorithmList.grid(row=0, column=1, padx=5, pady=5)
 algorithmList.current(0) #chooses Bubble Sort by default since it is in index 0
 

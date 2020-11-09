@@ -10,7 +10,7 @@ Average Time Complexity [Big-theta]: O(n*log n)
 Space Complexity: O(n*log n)
 '''
 
-# Based off of Geeks for Geeks Bubble sort example
+# Based off of Geeks for Geeks Bubble sort example: https://www.geeksforgeeks.org/quick-sort/
 # Another source: https://www.studytonight.com/data-structures/quick-sort
 def QuickSort(data, low, high, drawDataArray, sortSpeedTime):
 

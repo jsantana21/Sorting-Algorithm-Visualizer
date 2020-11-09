@@ -9,7 +9,7 @@ Average Time Complexity [Big-theta]: O(n*log n)
 
 Space Complexity: O(n)
 '''
-# Based off of Geeks for Geeks Bubble sort example
+# Based off of Geeks for Geeks Bubble sort example: https://www.geeksforgeeks.org/merge-sort/
 # Another source: https://www.studytonight.com/data-structures/merge-sort#
 def MergeSort(data, drawDataArray, sortSpeedTime):
     MergeSort2(data,0, len(data)-1, drawDataArray, sortSpeedTime)

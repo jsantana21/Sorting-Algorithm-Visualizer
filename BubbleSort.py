@@ -10,7 +10,7 @@ Average Time Complexity [Big-theta]: O(n^2)
 Space Complexity: O(1)
 '''
 
-# Based off of Geeks for Geeks Bubble sort example
+# Based off of Geeks for Geeks Bubble sort example: https://www.geeksforgeeks.org/bubble-sort/
 # Another source: https://www.studytonight.com/data-structures/bubble-sort
 def BubbleSort(data, drawDataArray, sortSpeedTime):
     # Traverse through all array elements
@@ -24,6 +24,3 @@ def BubbleSort(data, drawDataArray, sortSpeedTime):
                 drawDataArray(data, ['purple' if x == j or x == j+1 else 'red' for x in range(len(data))] )
                 # Helps us determine how long this function should be asleep for once the user can see each step of this algorithm
                 time.sleep(sortSpeedTime)
-                
-    # After going through the double for loop, the array should be sorted therefore all bars should be blue
-    drawDataArray(data, ['blue' for x in range(len(data))])
