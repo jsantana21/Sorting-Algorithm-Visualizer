@@ -51,6 +51,7 @@ def partition(data, low, high, drawDataArray, sortSpeedTime):
     
     return border # border should be the middle by the end of this function
 
+#Helps in the visualization part of the algorithm 
 def getColorArray(dataLength, low, high, border, currentIndex, isSwaping = False):
     
     colorArray = []
@@ -59,12 +60,12 @@ def getColorArray(dataLength, low, high, border, currentIndex, isSwaping = False
         
         # Base Colors for when the array is unsorted
         if i >= low and i <= high:
-            colorArray.append('gray') # Current elements we are looking at
+            colorArray.append('gray') # Current range of elements we are looking at
         else:
             colorArray.append('red') # All other elements we aren't currently looking at; outside of range(low, high+1) 
 
         if i == high:
-            colorArray[i] = 'orange' # the pivot will be highlighted in yellow
+            colorArray[i] = 'orange' # the pivot will be highlighted in orange
         elif i == border:
             colorArray[i] = 'green' # the border will be highlighted in green
         elif i == currentIndex:

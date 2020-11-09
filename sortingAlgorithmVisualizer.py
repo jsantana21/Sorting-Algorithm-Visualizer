@@ -3,6 +3,7 @@ from tkinter import ttk
 import random # To generate random data values
 from BubbleSort import BubbleSort
 from QuickSort import QuickSort
+from MergeSort import MergeSort
 
 
 # Generates a black window; Background for GUI 
@@ -70,11 +71,16 @@ def StartSortingAlgorithm():
 
     if (algorithmList.get() == 'Quick Sort'):
         QuickSort(data, 0, len(data)-1, drawDataArray, sortingSpeedScale.get())
-        # After going through the double for loop, the array should be sorted therefore all bars should be blue
-        drawDataArray(data, ['blue' for x in range(len(data))])
 
     elif algorithmList.get() == 'Bubble Sort':
         BubbleSort(data, drawDataArray, sortingSpeedScale.get())
+
+    elif algorithmList.get() == 'Merge Sort':
+        MergeSort(data, drawDataArray, sortingSpeedScale.get())
+
+    # After going through the double for loop, the array should be sorted therefore all bars should be blue
+    drawDataArray(data, ['blue' for x in range(len(data))])
+    
 
 # Generates the background User Interface area of the GUI
 UserInterfaceFrame = Frame(root, width = 1400, height = 200, bg='snow4')
