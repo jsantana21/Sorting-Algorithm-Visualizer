@@ -33,4 +33,4 @@ The color representation in my Insertion Sort animation is exactly the same as t
 
 
 ### What Could be Improved?
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As much as I like Python's Tkinter module, I think this project would look way better if it was done as React Application. However I'm not knowledgeable in React at the moment so I resort to using Python. There are limits to how many data values, and how high the values can be and I feel that React could help in solving this issue. I could also implement more sorting alogrithms such as Heap Sort, and Selection Sort in the future. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As much as I like Python's Tkinter module, I think this project would look way better if it was done as React Application. However I'm not knowledgeable in React at the moment so I resort to using Python; this is why it took me so long to complete this project. There are limits to how many data values, and how high the values can be and I feel that React could help in solving this issue. I could also implement more sorting alogrithms such as Heap Sort, and Selection Sort in the future. 
